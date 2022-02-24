@@ -1,12 +1,32 @@
 {
   "name": "inventories",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "Cristian Bonilla",
+    "email": "cristiancamilo10_95@outlook.com",
+    "url": "https://www.linkedin.com/in/cristian-bonilla95/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CristianBonilla/inventories.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.12.0",
+    "npm": ">=6.11.3",
+    "yarn": ">=1.22.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test:cute": "ng test --reporters nyan",
+    "e2e": "ng e2e",
+    "coverage": "ng test --watch=false --code-coverage",
+    "lint": "ng lint",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
@@ -24,10 +44,18 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.5",
+    "@angular-eslint/builder": "13.1.0",
+    "@angular-eslint/eslint-plugin": "13.1.0",
+    "@angular-eslint/eslint-plugin-template": "13.1.0",
+    "@angular-eslint/schematics": "13.1.0",
+    "@angular-eslint/template-parser": "13.1.0",
     "@angular/cli": "~13.2.5",
     "@angular/compiler-cli": "~13.2.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "5.11.0",
+    "@typescript-eslint/parser": "5.11.0",
+    "eslint": "^8.2.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
