@@ -12,7 +12,7 @@
       "schematics": {
         "@schematics/angular:component": {
           "inlineStyle": true,
-          "style": "sass"
+          "style": "scss"
         },
         "@schematics/angular:application": {
           "strict": true
@@ -36,12 +36,24 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/bootstrap-select/sass/bootstrap-select.scss",
+              "node_modules/overlayscrollbars/css/OverlayScrollbars.min.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "src/styles/main.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/bootstrap-select/js/bootstrap-select.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "overlayscrollbars"
+            ]
           },
           "configurations": {
-            "production": {
+            "pro": {
               "budgets": [
                 {
                   "type": "initial",
@@ -57,33 +69,79 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/environment.pro.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
             },
-            "development": {
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ],
+              "outputHashing": "none",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "stg": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stg.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "pro"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-              "browserTarget": "inventories:build:production"
+            "pro": {
+              "browserTarget": "inventories:build:pro"
             },
-            "development": {
-              "browserTarget": "inventories:build:development"
+            "dev": {
+              "browserTarget": "inventories:build:dev"
+            },
+            "stg": {
+              "browserTarget": "inventories:build:stg"
             }
           },
-          "defaultConfiguration": "development"
+          "options": {
+            "port": 17850
+          },
+          "defaultConfiguration": "dev"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -104,9 +162,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/bootstrap-select/sass/bootstrap-select.scss",
+              "node_modules/overlayscrollbars/css/OverlayScrollbars.min.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "src/styles/main.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/bootstrap-select/js/bootstrap-select.js"
+            ]
           }
         },
         "lint": {

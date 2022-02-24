@@ -1,6 +1,6 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -19,9 +19,15 @@
     "target": "es2017",
     "module": "es2020",
     "lib": [
-      "es2020",
-      "dom"
-    ]
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
