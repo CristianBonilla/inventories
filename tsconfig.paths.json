@@ -2,7 +2,16 @@
   "compilerOptions": {
     "paths": {
       "@src/*": ["./src/*"],
-      "@app/*": ["./src/app/*"]
+      "@app/*": ["./src/app/*"],
+      "@core/*": ["./src/app/core/*"],
+      "@directives/*": ["./src/app/directives/*"],
+      "@guards/*": ["./src/app/guards/*"],
+      "@helpers/*": ["./src/app/helpers/*"],
+      "@interceptors/*": ["./src/app/interceptors/*"],
+      "@models/*": ["./src/app/models/*"],
+      "@modules/*": ["./src/app/modules/*"],
+      "@services/*": ["./src/app/services/*"],
+      "@shared/*": ["./src/app/shared/*"]
     }
   }
 }

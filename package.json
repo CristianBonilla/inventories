@@ -49,6 +49,7 @@
     "bootstrap": "~4.6.1",
     "bootstrap-select": "^1.13.18",
     "jquery": "^3.6.0",
+    "ngx-permissions": "^13.0.1",
     "ngx-toastr": "^14.2.1",
     "ngx-trim-directive": "^2.0.0",
     "overlayscrollbars": "^1.13.1",
