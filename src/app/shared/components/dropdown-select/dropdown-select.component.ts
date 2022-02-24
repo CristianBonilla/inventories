@@ -49,7 +49,8 @@ export class DropdownSelectComponent implements ControlValueAccessor, AfterViewI
     this._items = items;
   }
 
-  @Input() options: Partial<DropdownSelectOptions> = { };
+  @Input()
+  options: Partial<DropdownSelectOptions> = { };
 
   @Input()
   get style() {
@@ -69,7 +70,8 @@ export class DropdownSelectComponent implements ControlValueAccessor, AfterViewI
     this._disabled = disabled;
   }
 
-  @Input() multiple = false;
+  @Input()
+  multiple = false;
 
   defaultOptions: Partial<DropdownSelectOptions> = {
     selectAllText: 'Seleccionar todo',
