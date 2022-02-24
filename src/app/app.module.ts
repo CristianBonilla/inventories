@@ -12,6 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from '@app/app.component';
 
 import { environment } from '@src/environments/environment';
+import { reducers, metaReducers } from '@app/store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { environment } from '@src/environments/environment';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {
+    StoreModule.forRoot(reducers, {
+      metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true
