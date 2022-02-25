@@ -123,9 +123,14 @@
       &_wrapper {
         width: $sidebar-min-width;
 
-        .nav li > a p {
-          opacity: 0;
-          transform: translate3d(-25px, 0, 0);
+        .os-content,
+        & {
+
+          > .nav [data-toggle="collapse"] ~ div > ul > li > a .sidebar-normal,
+          > .nav li > a p {
+            opacity: 0;
+            transform: translate3d(-25px, 0, 0);
+          }
         }
       }
 
@@ -167,9 +172,14 @@
 
       .sidebar_wrapper {
 
-        .nav li > a p {
-          opacity: 1;
-          transform: translate3d(0, 0, 0);
+        .os-content,
+        & {
+
+          > .nav [data-toggle="collapse"] ~ div > ul > li > a .sidebar-normal,
+          > .nav li > a p {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+          }
         }
       }
 

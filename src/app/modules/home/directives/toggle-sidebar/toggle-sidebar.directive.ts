@@ -42,7 +42,7 @@ export class ToggleSidebarDirective implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.toggleSidebarService.toggleSidebar$.pipe(
-      filter(toggleSidebar => !!toggleSidebar && !!toggleSidebar.$toggle && !!toggleSidebar.$sidebar),
+      filter(toggleSidebar => !!toggleSidebar?.$toggle && !!toggleSidebar?.$sidebar),
       take(1)
     ).subscribe(toggleSidebar => {
       this.$toggle = toggleSidebar?.$toggle as HTMLDivElement;

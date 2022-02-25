@@ -1,9 +1,14 @@
 export {
   faAlignJustify,
   faAlignRight,
+  faBoxOpen,
+  faClipboardList,
+  faCogs,
+  faDollarSign,
   faHome,
   faSignOutAlt,
-  faClipboardList
+  faShoppingBag,
+  faUsers
 } from '@fortawesome/free-solid-svg-icons';
 
 export {

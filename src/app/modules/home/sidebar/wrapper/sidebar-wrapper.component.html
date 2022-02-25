@@ -14,5 +14,43 @@
         <p>Inventarios<span class="badge badge-success">¡Nuevo!</span></p>
       </a>
     </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="ROUTES.SHOPPING">
+        <fa-icon [icon]="[ 'fas', 'shopping-bag' ]" size="2x"></fa-icon>
+        <p>Compras</p>
+      </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="ROUTES.SALES">
+        <fa-icon [icon]="[ 'fas', 'dollar-sign' ]" size="2x"></fa-icon>
+        <p>Ventas</p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#configuration">
+        <fa-icon [icon]="[ 'fas', 'cogs' ]" size="2x"></fa-icon>
+        <p>Configuración<b class="caret"></b></p>
+      </a>
+      <div class="collapse" id="configuration">
+        <ul class="nav">
+          <li class="nav-item" routerLinkActive="active">
+            <a href="/" (click)="$event.preventDefault()">
+              <span class="sidebar-mini-icon">
+                <fa-icon [icon]="[ 'fas', 'users' ]"></fa-icon>
+              </span>
+              <span class="sidebar-normal">Usuarios</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/" (click)="$event.preventDefault()">
+              <span class="sidebar-mini-icon">
+                <fa-icon [icon]="[ 'fas', 'box-open' ]"></fa-icon>
+              </span>
+              <span class="sidebar-normal">Artículos</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
   </ul>
 </overlay-scrollbars>

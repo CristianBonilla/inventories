@@ -9,6 +9,7 @@ import { ToggleSidebarService } from '@modules/home/services/toggle-sidebar/togg
 })
 export class SidebarComponent implements AfterViewInit {
   private readonly $body: HTMLElement;
+
   @ViewChild('sidebar')
   readonly sidebarRef!: ElementRef<HTMLDivElement>;
 
