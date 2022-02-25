@@ -11,6 +11,7 @@ import { FooterComponent } from '@modules/home/footer/footer.component';
 import { NavbarComponent } from '@modules/home/navbar/navbar.component';
 import { SidebarComponent } from '@modules/home/sidebar/sidebar.component';
 import { SidebarWrapperComponent } from '@modules/home/sidebar/wrapper/sidebar-wrapper.component';
+import { CollapseSidebarDirective } from './directives/collapse-sidebar/collapse-sidebar.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SidebarWrapperComponent } from '@modules/home/sidebar/wrapper/sidebar-w
     NavbarComponent,
     SidebarComponent,
     ToggleSidebarDirective,
-    SidebarWrapperComponent
+    SidebarWrapperComponent,
+    CollapseSidebarDirective
   ],
   imports: [
     CommonModule,
