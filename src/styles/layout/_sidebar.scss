@@ -177,25 +177,6 @@
     }
   }
 
-  .nav {
-
-    li {
-
-      > a {
-        margin: 10px 15px 0;
-        border-radius: 0;
-        color: $white-color;
-        display: block;
-        text-decoration: none;
-        position: relative;
-        cursor: pointer;
-        font-size: 1.012em;
-        padding: 10px 8px;
-        line-height: 1.625rem;
-      }
-    }
-  }
-
   &_wrapper {
     position: relative;
     height: calc(100vh - 71.65px);
@@ -271,7 +252,6 @@
         > a {
           border-radius: 3px;
           color: $black-color;
-          // text-transform: capitalize;
           font-size: 1rem;
           padding: 10px 8px;
           margin: 10px 15px 0;
@@ -280,9 +260,18 @@
 
           &:hover,
           &:focus {
-            background-color: transparent;
+            background-color: rgba(200, 200, 200, 0.2);
             outline: none;
           }
+        }
+
+        > a[data-toggle="collapse"] ~ div .nav > li > a {
+          border-radius: 0;
+          display: block;
+          text-decoration: none;
+          position: relative;
+          cursor: pointer;
+          font-size: 1.012em;
         }
 
         &:first-child > a {
@@ -328,6 +317,7 @@
             & + div .nav .active a {
               background-color: transparent;
               box-shadow: none;
+              cursor: default;
 
               &:after {
                 content: '';
@@ -375,7 +365,7 @@
 
       .nav {
 
-        [data-toggle="collapse"] ~ div > ul > li > a {
+        [data-toggle="collapse"] ~ div > .nav > li > a {
 
           span {
             display: inline-block;
