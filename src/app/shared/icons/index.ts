@@ -8,7 +8,8 @@ export {
   faHome,
   faSignOutAlt,
   faShoppingBag,
-  faUsers
+  faUsers,
+  faSpinner
 } from '@fortawesome/free-solid-svg-icons';
 
 export {

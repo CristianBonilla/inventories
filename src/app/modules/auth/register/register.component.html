@@ -1,1 +1,47 @@
-<p>register works!</p>
+<div class="register-show container">
+  <div class="wrap">
+    <h2 class="text-secondary text-left">Registrarse</h2>
+    <form autocomplete="off" [formGroup]="registerForm" (ngSubmit)="register()">
+      <div class="form-group">
+        <label for="username">Nombre de usuario</label>
+        <input type="text" id="username" class="form-control" placeholder="Nombre de usuario"
+          [formControl]="username"
+          [miFormErrors]="username" trim="blur">
+      </div>
+      <div class="form-group">
+        <label for="first-name">Nombres</label>
+        <input type="text" id="first-name" class="form-control" placeholder="Nombres"
+          [formControl]="firstName"
+          [miFormErrors]="firstName" trim="blur">
+      </div>
+      <div class="form-group">
+        <label for="last-name">Apellidos</label>
+        <input type="text" id="last-name" class="form-control" placeholder="Apellidos"
+          [formControl]="lastName"
+          [miFormErrors]="lastName" trim="blur">
+      </div>
+      <div class="form-group">
+        <label for="DNI">Documento de identificación</label>
+        <input type="text" id="last-name" class="form-control" placeholder="Documento de identificación"
+          [formControl]="DNI"
+          [miFormErrors]="DNI" trim="blur">
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" class="form-control" placeholder="Contraseña"
+          [formControl]="password"
+          [miFormErrors]="password" trim>
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirmar contraseña</label>
+        <input type="password" id="confirm-password" class="form-control" placeholder="Confirmar Contraseña"
+          [formControl]="confirmPassword"
+          [miFormErrors]="confirmPassword" trim>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg float-left" [disabled]="!registerForm.valid || (loading$ | async)">
+        <fa-icon [icon]="[ 'fas', 'spinner' ]" [spin]="true" *ngIf="loading$ | async"></fa-icon>
+        Registrarse
+      </button>
+    </form>
+  </div>
+</div>

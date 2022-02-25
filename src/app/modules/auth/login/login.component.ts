@@ -28,8 +28,8 @@ export class LoginComponent {
   }
 
   constructor(private formBuilder: FormBuilder) {
-    this.usernameOrEmail?.setValidators([Validators.required]);
-    this.password?.setValidators([Validators.required]);
+    this.usernameOrEmail.setValidators([Validators.required]);
+    this.password.setValidators([Validators.required]);
   }
 
   login() {
