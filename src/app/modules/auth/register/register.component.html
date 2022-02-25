@@ -22,7 +22,7 @@
       </div>
       <div class="form-group">
         <label for="DNI">Documento de identificación</label>
-        <input type="text" id="last-name" class="form-control" placeholder="Documento de identificación"
+        <input type="text" id="DNI" class="form-control" placeholder="Documento de identificación"
           [formControl]="DNI"
           [miFormErrors]="DNI" trim="blur">
       </div>
@@ -38,7 +38,7 @@
           [formControl]="confirmPassword"
           [miFormErrors]="confirmPassword" trim>
       </div>
-      <button type="submit" class="btn btn-primary btn-lg float-left" [disabled]="!registerForm.valid || (loading$ | async)">
+      <button type="submit" class="btn btn-danger btn-lg float-left" [disabled]="!registerForm.valid || (loading$ | async)">
         <fa-icon [icon]="[ 'fas', 'spinner' ]" [spin]="true" *ngIf="loading$ | async"></fa-icon>
         Registrarse
       </button>

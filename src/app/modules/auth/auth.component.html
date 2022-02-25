@@ -1,3 +1,33 @@
 <div class="auth-wrap">
-  <div class="auth-panel"></div>
+  <div class="auth-panel">
+    <ng-container *ngIf="auth !== authType.Login; then login; else register"></ng-container>
+    <overlay-scrollbars class="auth-panel_container"
+      [options]="scrollbarOptions"
+      [ngClass]="{ 'right-log': auth === authType.Register }">
+      <ng-container [ngSwitch]="auth">
+        <mi-register *ngSwitchCase="authType.Register" (loading)="loading = $event"></mi-register>
+        <mi-login *ngSwitchDefault (loading)="loading = $event"></mi-login>
+      </ng-container>
+    </overlay-scrollbars>
+  </div>
 </div>
+
+<ng-template #login>
+  <div class="auth-panel_login">
+    <h2>Tienes una cuenta?</h2>
+    <p>Accede e interactua con el panel administrativo, para un proceso de inventarios</p>
+    <button type="button" class="btn btn-light btn-lg" role="button"
+      [disabled]="loading"
+      (click)="auth = authType.Login">Iniciar Sesión</button>
+  </div>
+</ng-template>
+
+<ng-template #register>
+  <div class="auth-panel_register">
+    <h2>No tienes una cuenta?</h2>
+    <p>Has un proceso de inventarios ahora mismo!</p>
+    <button type="button" class="btn btn-light btn-lg" role="button"
+      [disabled]="loading"
+      (click)="auth = authType.Register">Registrarse</button>
+  </div>
+</ng-template>
