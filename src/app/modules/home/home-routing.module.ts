@@ -14,9 +14,24 @@ const routes: Routes = [
           .then(module => module.InventoriesModule)
       },
       {
+        path: 'sales',
+        loadChildren: () => import('@modules/sales/sales.module')
+          .then(module => module.SalesModule)
+      },
+      {
+        path: 'shopping',
+        loadChildren: () => import('@modules/shopping/shopping.module')
+          .then(module => module.ShoppingModule)
+      },
+      {
         path: 'users',
         loadChildren: () => import('@modules/auth/users/users.module')
           .then(module => module.UsersModule)
+      },
+      {
+        path: 'articles',
+        loadChildren:  () => import('@modules/articles/articles.module')
+          .then(module => module.ArticlesModule)
       },
       {
         path: '',
