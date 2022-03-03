@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SidebarWrapperComponent } from './sidebar-wrapper.component';
+import { SidebarWrapperComponent } from '@modules/home/sidebar/wrapper/sidebar-wrapper.component';
 
 describe('SidebarWrapperComponent', () => {
   let component: SidebarWrapperComponent;

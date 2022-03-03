@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from '@modules/home/home-routing.module';
 import { IconsModule } from '@shared/icons/icons.module';
 import { OverlayscrollbarsModule } from 'overlayscrollbars-ngx';
-import { UsersModule } from '@modules/auth/users/users.module';
 
 import { ToggleSidebarDirective } from '@modules/home/directives/toggle-sidebar/toggle-sidebar.directive';
 import { CollapseSidebarDirective } from '@modules/home/directives/collapse-sidebar/collapse-sidebar.directive';
@@ -28,8 +27,7 @@ import { SidebarWrapperComponent } from '@modules/home/sidebar/wrapper/sidebar-w
     CommonModule,
     HomeRoutingModule,
     IconsModule,
-    OverlayscrollbarsModule,
-    UsersModule
+    OverlayscrollbarsModule
   ]
 })
 export class HomeModule { }

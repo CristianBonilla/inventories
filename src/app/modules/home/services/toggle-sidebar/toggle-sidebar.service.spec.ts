@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ToggleSidebarService } from './toggle-sidebar.service';
+import { ToggleSidebarService } from '@modules/home/services/toggle-sidebar/toggle-sidebar.service';
 
 describe('ToggleSidebarService', () => {
   let service: ToggleSidebarService;
