@@ -34,7 +34,7 @@
       <div class="collapse" id="configuration">
         <ul class="nav">
           <li class="nav-item" routerLinkActive="active">
-            <a href="/" (click)="$event.preventDefault()">
+            <a [routerLink]="ROUTES.USERS">
               <span class="sidebar-mini-icon">
                 <fa-icon [icon]="[ 'fas', 'users' ]"></fa-icon>
               </span>
@@ -42,7 +42,7 @@
             </a>
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a href="/" (click)="$event.preventDefault()">
+            <a [routerLink]="ROUTES.ARTICLES">
               <span class="sidebar-mini-icon">
                 <fa-icon [icon]="[ 'fas', 'box-open' ]"></fa-icon>
               </span>

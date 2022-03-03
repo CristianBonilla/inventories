@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from '@modules/home/home-routing.module';
 import { IconsModule } from '@shared/icons/icons.module';
 import { OverlayscrollbarsModule } from 'overlayscrollbars-ngx';
+import { UsersModule } from '@modules/auth/users/users.module';
 
 import { ToggleSidebarDirective } from '@modules/home/directives/toggle-sidebar/toggle-sidebar.directive';
+import { CollapseSidebarDirective } from '@modules/home/directives/collapse-sidebar/collapse-sidebar.directive';
 
 import { HomeComponent } from '@modules/home/home.component';
 import { FooterComponent } from '@modules/home/footer/footer.component';
 import { NavbarComponent } from '@modules/home/navbar/navbar.component';
 import { SidebarComponent } from '@modules/home/sidebar/sidebar.component';
 import { SidebarWrapperComponent } from '@modules/home/sidebar/wrapper/sidebar-wrapper.component';
-import { CollapseSidebarDirective } from './directives/collapse-sidebar/collapse-sidebar.directive';
 
 @NgModule({
   declarations: [
@@ -19,15 +20,16 @@ import { CollapseSidebarDirective } from './directives/collapse-sidebar/collapse
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    ToggleSidebarDirective,
     SidebarWrapperComponent,
+    ToggleSidebarDirective,
     CollapseSidebarDirective
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     IconsModule,
-    OverlayscrollbarsModule
+    OverlayscrollbarsModule,
+    UsersModule
   ]
 })
 export class HomeModule { }

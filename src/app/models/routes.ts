@@ -1,34 +1,52 @@
 import { Event, NavigationEnd } from '@angular/router';
 
 const APP_ROUTES = {
+  AUTH: {
+    MAIN: '/auth'
+  },
   HOME: {
-    MAIN: 'home',
+    MAIN: '/home',
     INVENTORIES: {
-      MAIN: 'home/inventories'
+      MAIN: '/home/inventories'
     },
     SHOPPING: {
-      MAIN: 'home/shopping'
+      MAIN: '/home/shopping'
     },
     SALES: {
-      MAIN: 'home/sales'
-    }
+      MAIN: '/home/sales'
+    },
+    USERS: '/home/users',
+    ARTICLES: '/home/articles'
   }
 } as const;
 
-type RouteKeys = keyof typeof ROUTES;
+export interface SidebarRoutes {
+  AUTH: string;
+  HOME: string;
+  INVENTORIES: string;
+  SHOPPING: string;
+  SALES: string;
+  USERS: string;
+  ARTICLES: string;
+  [route: string]: string;
+}
 
-const { HOME: ROUTES } = APP_ROUTES;
+function sidebarRoutes(currentRoutes: any) {
+  return Object.keys(currentRoutes).reduce((routes, key) => {
+    const route = currentRoutes[key];
+    if (typeof route === 'string') {
+      routes[key] = route;
+    } else {
+      const { MAIN, ...otherRoutes } = route;
+      routes[key] = MAIN;
+      routes = { ...routes, ...sidebarRoutes(otherRoutes) };
+    }
 
-type HomeRoutes = {
-  [K in RouteKeys]: string;
-};
+    return routes;
+  }, { } as SidebarRoutes);
+}
 
-const SIDEBAR_ROUTES = Object.keys(ROUTES).reduce<HomeRoutes>((routes, key) => {
-  const route = ROUTES[key as RouteKeys];
-  routes[key as RouteKeys] = typeof route === 'object' ? route.MAIN : route;
-
-  return routes;
-}, { } as HomeRoutes);
+const SIDEBAR_ROUTES = sidebarRoutes(APP_ROUTES);
 
 Object.freeze(APP_ROUTES);
 Object.freeze(SIDEBAR_ROUTES);
