@@ -27,3 +27,8 @@ export interface UserResponse {
   date: Date;
   rol: Role;
 }
+
+export enum ErrorType {
+  NoUsers = 'NoUsers',
+  Failed = 'Failed'
+}
