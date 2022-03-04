@@ -1,9 +1,9 @@
 import { UserResponse } from '@modules/auth/models/auth';
 import { Action, createReducer, on } from '@ngrx/store';
 import {
-  fetchUsers,
-  fetchUsersFailure,
-  fetchUsersSuccess
+  fetchActionUsers,
+  fetchActionUsersFailure,
+  fetchActionUsersSuccess
 } from '@modules/auth/users/store/actions/users.actions';
 
 export interface UsersState {
@@ -22,17 +22,17 @@ export const initialState: UsersState = {
 
 const usersReducer = createReducer(
   initialState,
-  on(fetchUsers, state => ({
+  on(fetchActionUsers, state => ({
     ...state,
     loading: true,
     hasRequestedUsers: true
   })),
-  on(fetchUsersSuccess, (state, { data: users }) => ({
+  on(fetchActionUsersSuccess, (state, { data: users }) => ({
     ...state,
     users,
     loading: false
   })),
-  on(fetchUsersFailure, (state, { error }) => ({
+  on(fetchActionUsersFailure, (state, { error }) => ({
     ...state,
     error,
     loading: false

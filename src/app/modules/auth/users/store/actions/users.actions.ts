@@ -8,13 +8,13 @@ export enum UsersActions {
   FETCH_USERS_FAILURE = '[Users/API] Fetch Users Failure'
 }
 
-export const getUsers = createAction(UsersActions.GET_USERS);
-export const fetchUsers = createAction(UsersActions.FETCH_USERS);
-export const fetchUsersSuccess = createAction(
+export const getActionUsers = createAction(UsersActions.GET_USERS);
+export const fetchActionUsers = createAction(UsersActions.FETCH_USERS);
+export const fetchActionUsersSuccess = createAction(
   UsersActions.FETCH_USERS_SUCCESS,
   props<{ data: UserResponse[] }>()
 );
-export const fetchUsersFailure = createAction(
+export const fetchActionUsersFailure = createAction(
   UsersActions.FETCH_USERS_FAILURE,
   props<{ error: any }>()
 );
