@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { UsersRoutingModule } from '@modules/auth/users/users-routing.module';
+import { IconsModule } from '@shared/icons/icons.module';
+import { OverlayscrollbarsModule } from 'overlayscrollbars-ngx';
 
 import { UsersComponent } from '@modules/auth/users/users.component';
 
@@ -16,7 +18,9 @@ import { reducer as usersReducer } from '@modules/auth/users/store/reducers/user
     CommonModule,
     EffectsModule.forFeature([UsersEffects]),
     StoreModule.forFeature(usersFeatureKey, usersReducer),
-    UsersRoutingModule
+    UsersRoutingModule,
+    IconsModule,
+    OverlayscrollbarsModule
   ]
 })
 export class UsersModule { }

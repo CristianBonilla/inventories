@@ -9,10 +9,12 @@ export {
   faSignOutAlt,
   faShoppingBag,
   faUsers,
-  faSpinner
+  faSpinner,
+  faPlusCircle
 } from '@fortawesome/free-solid-svg-icons';
 
 export {
   faBell,
-  faUserCircle
+  faUserCircle,
+  faEye
 } from '@fortawesome/free-regular-svg-icons';

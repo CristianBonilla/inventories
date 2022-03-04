@@ -3,15 +3,18 @@ import { Store } from '@ngrx/store';
 import { distinctUntilChanged, filter, map, Observable, Subscription, take } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { DEFAULT_SCROLLBAR_OPTIONS, ScrollbarOptions } from '@models/scrollbar';
+import { APP_ROUTES } from '@models/routes';
 import { ErrorType, UserResponse } from '@modules/auth/models/auth';
 import { UsersState } from '@modules/auth/users/store/reducers/users.reducer';
 import { getActionUsers } from '@modules/auth/users/store/actions/users.actions';
 import { getError, getUserAmount, getUsers, isLoading } from '@modules/auth/users/store/selectors/users.selectors';
 
+const { HOME: { USERS: ROUTES } } = APP_ROUTES;
+
 @Component({
   selector: 'mi-users',
   templateUrl: './users.component.html',
-  styles: []
+  styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
   readonly scrollbarOptions: ScrollbarOptions = {
@@ -20,6 +23,8 @@ export class UsersComponent implements OnInit {
       y: 'visible-hidden'
     }
   };
+  readonly routes = ROUTES;
+  readonly errorType = ErrorType;
   loading$!: Observable<boolean>;
   users$!: Observable<UserResponse[] | null>;
   failedSubscriptions: Subscription[] = [];
@@ -37,6 +42,10 @@ export class UsersComponent implements OnInit {
     this.store.dispatch(getActionUsers());
     this.loadSuccess();
     this.onErrors();
+  }
+
+  trackByUser(index: number, user: UserResponse) {
+    return `${ index }-${ user.id }`;
   }
 
   private loadSuccess() {

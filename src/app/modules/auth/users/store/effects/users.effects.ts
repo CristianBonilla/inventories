@@ -45,7 +45,7 @@ export class UsersEffects {
     switchMap(_ => {
       const users$ = this.service.fetchUsers().pipe(
         delay(DEFAULT_WAIT),
-        map(users => fetchActionUsersSuccess({ data: users })),
+        map(data => fetchActionUsersSuccess({ data })),
         catchError(httpError => {
           const error = httpError.error ?? httpError;
 

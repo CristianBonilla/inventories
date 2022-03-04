@@ -13,7 +13,7 @@ export interface UsersState {
   loading: boolean;
 }
 
-export const initialState: UsersState = {
+const initialState: UsersState = {
   users: null,
   hasRequestedUsers: false,
   error: null,
@@ -27,9 +27,9 @@ const usersReducer = createReducer(
     loading: true,
     hasRequestedUsers: true
   })),
-  on(fetchActionUsersSuccess, (state, { data: users }) => ({
+  on(fetchActionUsersSuccess, (state, { data }) => ({
     ...state,
-    users,
+    users: data?.data ?? [],
     loading: false
   })),
   on(fetchActionUsersFailure, (state, { error }) => ({

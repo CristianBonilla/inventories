@@ -15,7 +15,13 @@ const APP_ROUTES = {
     SALES: {
       MAIN: '/home/sales'
     },
-    USERS: '/home/users',
+    USERS: {
+      MAIN: '/home/users',
+      USERS_CREATE: '/home/users/create',
+      USERS_UPDATE: '/home/users/update',
+      USERS_DELETE: '/home/users/delete',
+      USERS_DETAILS: '/home/users/details'
+    },
     ARTICLES: '/home/articles'
   }
 } as const;
@@ -27,6 +33,10 @@ export interface SidebarRoutes {
   SHOPPING: string;
   SALES: string;
   USERS: string;
+  USERS_CREATE: string;
+  USERS_UPDATE: string;
+  USERS_DELETE: string;
+  USERS_DETAILS: string;
   ARTICLES: string;
   [route: string]: string;
 }

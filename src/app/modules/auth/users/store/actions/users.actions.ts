@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+import { DataResponse } from '@models/common';
 import { UserResponse } from '@modules/auth/models/auth';
 
 export enum UsersActions {
@@ -12,7 +13,7 @@ export const getActionUsers = createAction(UsersActions.GET_USERS);
 export const fetchActionUsers = createAction(UsersActions.FETCH_USERS);
 export const fetchActionUsersSuccess = createAction(
   UsersActions.FETCH_USERS_SUCCESS,
-  props<{ data: UserResponse[] }>()
+  props<{ data: DataResponse<UserResponse> }>()
 );
 export const fetchActionUsersFailure = createAction(
   UsersActions.FETCH_USERS_FAILURE,
