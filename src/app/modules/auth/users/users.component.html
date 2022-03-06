@@ -47,7 +47,8 @@
 <ng-template #actions let-userId>
   <td class="table-actions">
     <div class="table-actions__content">
-      <a role="button" class="btn text-primary" placement="top" ngbTooltip="Detalles"
+      <a role="button" class="btn text-primary" placement="top"
+        ngbTooltip="Detalles"
         [routerLink]="routes.USERS_DETAILS + '/' + userId">
         <fa-icon [icon]="[ 'far', 'eye' ]" size="lg"></fa-icon>
       </a>

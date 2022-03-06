@@ -1,5 +1,5 @@
 import { ActionReducerMap, MetaReducer } from '@ngrx/store';
-import { clearState } from '@app/store/meta-reducers/clear.meta-reducer';
+import { clearState } from 'src/app/store/meta-reducers/clear.meta-reducer';
 
 export interface AppState { }
 

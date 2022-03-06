@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
     "paths": {
-      "@src/*": ["./src/*"],
-      "@app/*": ["./src/app/*"],
       "@core/*": ["./src/app/core/*"],
       "@directives/*": ["./src/app/directives/*"],
       "@guards/*": ["./src/app/guards/*"],
